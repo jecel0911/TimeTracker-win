@@ -1,36 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
 using System.Windows.Forms;
 
 namespace TimeTracker
 {
-    public partial class Form1 : Form
+    public partial class frm_Home : Form
     {
-        KeyboardHook hook = new KeyboardHook();
-
-        public Form1()
+        public frm_Home()
         {
             InitializeComponent();
-
-            // register the event that is fired after the key press.
-            hook.KeyPressed +=
-                new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
-            // register the control + alt + F12 combination as hot key.
-            hook.RegisterHotKey(TimeTracker.ModifierKeys.Control | TimeTracker.ModifierKeys.Shift,
-                Keys.T);
+            this.TopMost = true;
+            registerShowHook();
+            registerHideHook();
         }
 
-        void hook_KeyPressed(object sender, KeyPressedEventArgs e)
+        //register the show hook (keyboard combination to show the application)
+        void registerShowHook()
         {
-            // show the keys pressed in a label.
-            Console.WriteLine("Control + Alt + T pressed");
+            KeyboardHook showHook = new KeyboardHook();
+            showHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(shoHook_KeyPressed);
+            showHook.RegisterHotKey(TimeTracker.ModifierKeys.Control | TimeTracker.ModifierKeys.Shift,
+                Keys.Up);
+        }
+        //Event fired when showHook is activated
+        void shoHook_KeyPressed(object sender, KeyPressedEventArgs e)
+        {
+            Console.WriteLine("Show Hook Key Pressed");
+            this.Show();
+            this.Focus();
+        }
+
+        //register the hide hook (keyboard combination to hide the application)
+        void registerHideHook()
+        {
+            KeyboardHook hideHook = new KeyboardHook();
+            hideHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hideHook_KeyPressed);
+            hideHook.RegisterHotKey(TimeTracker.ModifierKeys.Control | TimeTracker.ModifierKeys.Shift,
+                Keys.Down);
+        }
+        //Event fired when showHook is activated
+        void hideHook_KeyPressed(object sender, KeyPressedEventArgs e)
+        {
+            Console.WriteLine("Hide Hook Key Pressed");
+            this.Hide();
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
