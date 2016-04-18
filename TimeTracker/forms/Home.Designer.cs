@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Home));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.txt_time_start = new System.Windows.Forms.TextBox();
             this.txt_Task = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Save = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_Time_end = new System.Windows.Forms.TextBox();
             this.txt_Detail = new System.Windows.Forms.TextBox();
+            this.txt_Time_start = new System.Windows.Forms.MaskedTextBox();
+            this.txt_Time_end = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -47,13 +47,6 @@
             this.notifyIcon1.Text = "Time Tracker";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick_1);
-            // 
-            // txt_time_start
-            // 
-            this.txt_time_start.Location = new System.Drawing.Point(16, 29);
-            this.txt_time_start.Name = "txt_time_start";
-            this.txt_time_start.Size = new System.Drawing.Size(100, 20);
-            this.txt_time_start.TabIndex = 0;
             // 
             // txt_Task
             // 
@@ -101,13 +94,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Detail";
             // 
-            // txt_Time_end
-            // 
-            this.txt_Time_end.Location = new System.Drawing.Point(16, 55);
-            this.txt_Time_end.Name = "txt_Time_end";
-            this.txt_Time_end.Size = new System.Drawing.Size(100, 20);
-            this.txt_Time_end.TabIndex = 6;
-            // 
             // txt_Detail
             // 
             this.txt_Detail.AcceptsReturn = true;
@@ -118,20 +104,37 @@
             this.txt_Detail.Size = new System.Drawing.Size(385, 46);
             this.txt_Detail.TabIndex = 7;
             // 
+            // txt_Time_start
+            // 
+            this.txt_Time_start.Location = new System.Drawing.Point(16, 29);
+            this.txt_Time_start.Name = "txt_Time_start";
+            this.txt_Time_start.Size = new System.Drawing.Size(108, 20);
+            this.txt_Time_start.TabIndex = 0;
+            // 
+            // txt_Time_end
+            // 
+            this.txt_Time_end.Location = new System.Drawing.Point(16, 55);
+            this.txt_Time_end.Name = "txt_Time_end";
+            this.txt_Time_end.Size = new System.Drawing.Size(108, 20);
+            this.txt_Time_end.TabIndex = 1;
+            // 
             // frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(909, 115);
-            this.Controls.Add(this.txt_Detail);
             this.Controls.Add(this.txt_Time_end);
+            this.Controls.Add(this.txt_Time_start);
+            this.Controls.Add(this.txt_Detail);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Task);
-            this.Controls.Add(this.txt_time_start);
             this.Name = "frm_Home";
+            this.Opacity = 0.95D;
             this.Text = "TimeTracker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -144,14 +147,14 @@
         #endregion
 
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.TextBox txt_time_start;
         private System.Windows.Forms.TextBox txt_Task;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_Time_end;
         private System.Windows.Forms.TextBox txt_Detail;
+        private System.Windows.Forms.MaskedTextBox txt_Time_start;
+        private System.Windows.Forms.MaskedTextBox txt_Time_end;
     }
 }
 
