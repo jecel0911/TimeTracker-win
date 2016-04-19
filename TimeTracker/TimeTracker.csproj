@@ -56,6 +56,8 @@
     <Compile Include="DB\ILocalDataBase.cs" />
     <Compile Include="DB\LocalDBSQLite3.cs" />
     <Compile Include="DB\MainDB.cs" />
+    <Compile Include="DB\models\Task.cs" />
+    <Compile Include="DB\models\TimeRecord.cs" />
     <Compile Include="forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>

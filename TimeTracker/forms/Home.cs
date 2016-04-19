@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using TimeTracker.DB;
 
 namespace TimeTracker
 {
@@ -87,7 +88,7 @@ namespace TimeTracker
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MainDB db = new MainDB();
         }
 
     }

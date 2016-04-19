@@ -7,9 +7,10 @@ namespace TimeTracker.DB
 {
     interface ILocalDataBase
     {
-        void createConnection();
-        void executeQuery(string txtQuery);
-        List<Object> executeSelect(string txtQuery);
-        void closeConnection();
+        void connect();
+        void initialSetUp();
+        void deleteDataBase();
+        void executeNonQuery(string txtQuery);
+        List<object> executeSelect(string txtQuery);
     }
 }
